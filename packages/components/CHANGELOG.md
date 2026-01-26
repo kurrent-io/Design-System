@@ -1,5 +1,11 @@
 # @kurrent-ui/components
 
+## 2.4.1
+
+### Patch Changes
+
+-   [`b29555ed`](https://github.com/kurrent-io/Design-System/commit/b29555ed759da4763e1ec7857a5a2b48b325e274) - action-dropdown: Clicking ActionDropdown toggle no longer triggers parent click handlers.
+
 ## 2.4.0
 
 ### Minor Changes
