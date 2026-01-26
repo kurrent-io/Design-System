@@ -47,7 +47,9 @@ export class ESActionDropdown {
         );
     }
 
-    private toggleDropdown = () => {
+    private toggleDropdown = (e: MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
         this.dropdownOpen = !this.dropdownOpen;
     };
 
