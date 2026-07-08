@@ -5,8 +5,7 @@
     "license": "Apache-2.0",
     "prettier": "./prettier",
     "exports": {
-        "./eslint": "./eslint.js",
-        "./eslint.js": "./eslint.js",
+        "./eslint": "./eslint.mjs",
         "./prettier": "./prettier.js",
         "./prettier.js": "./prettier.js",
         "./package.json": "./package.json",
@@ -24,7 +23,7 @@
         "g:prettier:fix": "cd $INIT_CWD && prettier --write \"src/**/**/!(*.d).{ts,tsx,css,json,html}\""
     },
     "files": [
-        "eslint.js",
+        "eslint.mjs",
         "prettier.js"
     ],
     "repository": {
