@@ -19,12 +19,12 @@ export const getScrollParent = (child: Element): Element => {
 
 const findParent = (node: Element): Element =>
     node.assignedSlot
-        ? node.assignedSlot.parentElement ??
+        ? (node.assignedSlot.parentElement ??
           node.assignedSlot.parentNode?.parentElement ??
-          (node.assignedSlot.getRootNode() as ShadowRoot).host
-        : node.parentElement ??
+          (node.assignedSlot.getRootNode() as ShadowRoot).host)
+        : (node.parentElement ??
           node.parentNode?.parentElement ??
-          (node.getRootNode() as ShadowRoot).host;
+          (node.getRootNode() as ShadowRoot).host);
 
 const canScroll = (node: Element) => {
     const style = getComputedStyle(node, null);

@@ -1,8 +1,2 @@
 export type ButtonVariant =
-    | 'default'
-    | 'filled'
-    | 'outline'
-    | 'delete'
-    | 'cancel'
-    | 'minimal'
-    | 'link';
+    'default' | 'filled' | 'outline' | 'delete' | 'cancel' | 'minimal' | 'link';

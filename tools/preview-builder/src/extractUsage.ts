@@ -59,7 +59,9 @@ const extractUsagesFromTypedoc = (doc: TypeDoc): Usage[] => {
     for (const reflection of reflections) {
         for (const signature of [
             reflection,
-            ...('signatures' in reflection ? reflection.signatures ?? [] : []),
+            ...('signatures' in reflection
+                ? (reflection.signatures ?? [])
+                : []),
         ]) {
             for (const tag of signature.comment?.blockTags ?? []) {
                 if (!tag || tag.tag !== '@usage') continue;

@@ -125,7 +125,7 @@ export class TableNested {
                         rows={
                             nestedActive
                                 ? [nestedActive]
-                                : this.getNestedRows?.(key, count) ?? []
+                                : (this.getNestedRows?.(key, count) ?? [])
                         }
                         renderExpansion={this.renderExpansion(depth + 1)}
                         rowClass={this.rowClassWithDefaults(depth + 1)}
@@ -214,8 +214,8 @@ export class TableNested {
             const extraClasses = !classes
                 ? {}
                 : typeof classes === 'string'
-                ? { [classes]: true }
-                : classes;
+                  ? { [classes]: true }
+                  : classes;
 
             return {
                 can_expand: true,

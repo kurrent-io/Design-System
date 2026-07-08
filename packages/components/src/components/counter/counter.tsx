@@ -36,8 +36,8 @@ export class Counter {
             this.count > 999
                 ? this.size * 2.2
                 : this.count > 99
-                ? this.size * 1.6
-                : this.size;
+                  ? this.size * 1.6
+                  : this.size;
 
         return (
             <Host

@@ -70,8 +70,8 @@ export const Link: FunctionalComponent<LinkProps> = (
                 disabled || url == null
                     ? undefined
                     : external
-                    ? url
-                    : router.getUrl(url)
+                      ? url
+                      : router.getUrl(url)
             }
             class={{
                 [activeClass]: !!match,

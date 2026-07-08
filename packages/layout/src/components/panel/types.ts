@@ -1,10 +1,5 @@
 export type TargetableArea =
-    | 'header'
-    | 'banner'
-    | 'sidebar'
-    | 'panel'
-    | 'toolbar'
-    | 'cookie';
+    'header' | 'banner' | 'sidebar' | 'panel' | 'toolbar' | 'cookie';
 
 export type TargetableEdge = TargetableArea | 'edge' | 'body';
 

@@ -96,7 +96,9 @@ export class LayoutLink {
                     class={this.disabled ? 'disabled' : ''}
                     aria-disabled={this.disabled}
                     part={'link'}
-                    target={this.target ?? this.external ? '_blank' : undefined}
+                    target={
+                        (this.target ?? this.external) ? '_blank' : undefined
+                    }
                     rel={this.external ? 'noopener' : undefined}
                     external={this.external}
                     forceRefresh={this.forceRefresh}

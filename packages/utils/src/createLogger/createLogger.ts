@@ -140,8 +140,8 @@ export function createLogger(name: string, color = 'black'): Logger {
                     group.length || !name
                         ? []
                         : isBrowser
-                        ? [`%c${name}`, styles.join(';')]
-                        : [`[${name}]`];
+                          ? [`%c${name}`, styles.join(';')]
+                          : [`[${name}]`];
 
                 (console[method] as any)(...prefix, ...args);
             }

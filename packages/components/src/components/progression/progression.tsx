@@ -50,8 +50,8 @@ export class Progression {
             const state = active
                 ? 'active'
                 : completed
-                ? 'complete'
-                : 'inactive';
+                  ? 'complete'
+                  : 'inactive';
 
             return {
                 ...checkpoint,

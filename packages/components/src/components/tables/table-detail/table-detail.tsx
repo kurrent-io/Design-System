@@ -61,7 +61,9 @@ export class TableDetail {
                         align = 'start',
                     } = this.getCell(name);
                     const variants =
-                        typeof variant === 'string' ? [variant] : variant ?? [];
+                        typeof variant === 'string'
+                            ? [variant]
+                            : (variant ?? []);
 
                     return (
                         <div

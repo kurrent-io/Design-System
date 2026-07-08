@@ -2506,7 +2506,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^10.0.0"
     eslint: "npm:^10.0.0"
-    prettier: "npm:3.0.0"
+    prettier: "npm:3.9.4"
     typescript: "npm:5.1.6"
     typescript-eslint: "npm:^8.63.0"
   peerDependencies:
@@ -9367,6 +9367,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:3.9.4":
+  version: 3.9.4
+  resolution: "prettier@npm:3.9.4"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 4a0dc4389d442f5aca0beb12778c90b6ceb9831940b01a1df5eba9150b5ce96fa52eda9074a10a370e732adc03e2f645597dfd8b7e3f1e94dee28df01004a0fd
+  languageName: node
+  linkType: hard
+
 "prettier@npm:^2.7.1":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
@@ -10004,7 +10013,7 @@ __metadata:
     eslint: "npm:^10.0.0"
     npm-run-all: "npm:^4.1.5"
     nx: "npm:20.1.3"
-    prettier: "npm:3.0.0"
+    prettier: "npm:3.9.4"
     typescript: "npm:5.1.6"
   languageName: unknown
   linkType: soft
