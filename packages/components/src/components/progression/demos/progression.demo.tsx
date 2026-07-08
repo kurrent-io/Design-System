@@ -109,7 +109,6 @@ export class Counter {
                     case 'complete':
                         return [ICON_NAMESPACE, 'check'];
                 }
-                true;
             },
         },
         {

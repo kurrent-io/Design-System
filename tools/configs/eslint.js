@@ -1,64 +1,67 @@
-module.exports = {
-    parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint'],
-    extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-    ],
-    ignorePatterns: ['node_modules', 'dist', 'www', '**/*.d.ts'],
-    rules: {
-        'no-undef': 0,
-        'no-mixed-spaces-and-tabs': 0,
-        eqeqeq: ['error', 'always', { null: 'ignore' }],
-        quotes: [
-            2,
-            'single',
-            {
-                avoidEscape: true,
-            },
-        ],
-        'no-console': 2,
-        'no-restricted-syntax': [
-            1,
-            {
-                selector: 'ExportDefaultDeclaration',
-                message: 'Prefer named exports',
-            },
-        ],
-        '@typescript-eslint/ban-types': [
-            1,
-            {
-                types: {
-                    object: false,
-                },
-                extendDefaults: true,
-            },
-        ],
-        '@typescript-eslint/no-explicit-any': 0,
-        '@typescript-eslint/explicit-member-accessibility': 0,
-        '@typescript-eslint/explicit-function-return-type': 0,
-        '@typescript-eslint/no-object-literal-type-assertion': 0,
-        '@typescript-eslint/no-non-null-assertion': 0,
-        '@typescript-eslint/no-unused-vars': 0,
-        '@typescript-eslint/no-empty-interface': 0,
-        '@typescript-eslint/no-inferrable-types': 0,
-        '@typescript-eslint/explicit-module-boundary-types': 0,
-        '@typescript-eslint/consistent-type-imports': [
-            'error',
-            {
-                prefer: 'type-imports',
-                disallowTypeAnnotations: true,
+const js = require('@eslint/js');
+const tseslint = require('typescript-eslint');
 
-            },
-        ],
+module.exports = [
+    {
+        ignores: ['**/node_modules/', '**/dist/', '**/www/', '**/*.d.ts'],
     },
-    overrides: [
-        {
-            files: ['*.js'],
-            rules: {
-                '@typescript-eslint/no-var-requires': 0,
-            },
+    js.configs.recommended,
+    ...tseslint.configs.recommended,
+    {
+        rules: {
+            'no-undef': 'off',
+            'no-mixed-spaces-and-tabs': 'off',
+            eqeqeq: ['error', 'always', { null: 'ignore' }],
+            quotes: [
+                'error',
+                'single',
+                {
+                    avoidEscape: true,
+                },
+            ],
+            'no-console': 'error',
+            'no-restricted-syntax': [
+                'warn',
+                {
+                    selector: 'ExportDefaultDeclaration',
+                    message: 'Prefer named exports',
+                },
+            ],
+            // successors to `ban-types`, kept at the same severity;
+            // interfaces allowed to match the removed `no-empty-interface`: off
+            '@typescript-eslint/no-empty-object-type': [
+                'warn',
+                { allowInterfaces: 'always' },
+            ],
+            '@typescript-eslint/no-unsafe-function-type': 'warn',
+            '@typescript-eslint/no-wrapper-object-types': 'warn',
+            '@typescript-eslint/no-explicit-any': 'off',
+            '@typescript-eslint/explicit-member-accessibility': 'off',
+            '@typescript-eslint/explicit-function-return-type': 'off',
+            '@typescript-eslint/no-non-null-assertion': 'off',
+            '@typescript-eslint/no-unused-vars': 'off',
+            '@typescript-eslint/no-inferrable-types': 'off',
+            '@typescript-eslint/explicit-module-boundary-types': 'off',
+            '@typescript-eslint/consistent-type-imports': [
+                'error',
+                {
+                    prefer: 'type-imports',
+                    disallowTypeAnnotations: true,
+                },
+            ],
         },
-    ],
-};
+    },
+    {
+        files: ['**/*.js', '**/*.cjs'],
+        rules: {
+            '@typescript-eslint/no-require-imports': 'off',
+        },
+    },
+    {
+        // flat config files can only use default exports
+        files: ['**/eslint.config.*'],
+        rules: {
+            'no-restricted-syntax': 'off',
+        },
+    },
+];

@@ -142,4 +142,5 @@ yargs
     })
     .demandCommand(1)
     .showHelpOnFail(true, 'Specify --help for available options')
-    .help('help').argv;
+    .help('help')
+    .parse();

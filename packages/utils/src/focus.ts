@@ -71,7 +71,8 @@ const activeElement = (
 const orderedFocusableElements = (el: Node, skip?: string) =>
     focusableElements(el, skip).sort(
         (a, b) =>
-            (a as HTMLElement).tabIndex ?? 0 - (b as HTMLElement).tabIndex ?? 0,
+            ((a as HTMLElement).tabIndex ?? 0) -
+            ((b as HTMLElement).tabIndex ?? 0),
     );
 
 const firstFocusable = (
