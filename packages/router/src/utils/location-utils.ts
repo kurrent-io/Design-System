@@ -180,12 +180,12 @@ export const createLocation = (
         location.pathname = decodeURI(location.pathname);
     } catch (e) {
         if (e instanceof URIError) {
-            // eslint-disable-next-line preserve-caught-error -- Error cause is not in this package's es2019 lib
             throw new URIError(
                 'Pathname "' +
                     location.pathname +
                     '" could not be decoded. ' +
                     'This is likely caused by an invalid percent-encoding.',
+                { cause: e },
             );
         } else {
             throw e;
