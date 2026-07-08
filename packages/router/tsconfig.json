@@ -5,7 +5,7 @@
         "allowUnreachableCode": false,
         "declaration": true,
         "experimentalDecorators": true,
-        "lib": ["dom", "es2019"],
+        "lib": ["dom", "es2022"],
         "outDir": "build",
         "declarationDir": "dist",
         "moduleResolution": "node",
