@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions -- bare property access triggers store subscriptions */
 import '../utils/initialize';
 import { createListStore } from './createListStore';
 

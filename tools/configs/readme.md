@@ -4,19 +4,38 @@ Configs for the Kurrent design system
 
 ## Eslint
 
-Install required dependencies for [eslint](https://eslint.org/).
+A flat config for [ESLint](https://eslint.org/) 10. The required plugins (`typescript-eslint`, `@eslint/js`) are included as dependencies.
 
 ```shell
-yarn add --dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
+yarn add --dev eslint
 ```
 
-Hook up the config by createing a `.eslint.js` file in the root of your project:
+Hook up the config by creating an `eslint.config.mjs` file in the root of your project:
 
-`.eslint.js`
+`eslint.config.mjs`
 
 ```js
-module.exports = require('@kurrent-ui/configs/eslint');
+import kurrentConfig from '@kurrent-ui/configs/eslint';
+
+export default [...kurrentConfig];
 ```
+
+Extend it by appending your own entries:
+
+```js
+import kurrentConfig from '@kurrent-ui/configs/eslint';
+
+export default [
+    ...kurrentConfig,
+    {
+        rules: {
+            quotes: 'off',
+        },
+    },
+];
+```
+
+If you extend with configs from your own `typescript-eslint` install, make sure it resolves to the same version as this package's, otherwise ESLint will reject the duplicate `@typescript-eslint` plugin registration.
 
 ## Prettier
 

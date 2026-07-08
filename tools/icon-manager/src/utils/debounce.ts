@@ -24,12 +24,12 @@ export function debounce<T extends (...args: any[]) => any>(
 
     Debounce.clear = () => {
         clearTimeout(timeoutId);
-        frame && clearTimeout(frame);
+        if (frame !== null) clearTimeout(frame);
     };
 
     Debounce.flush = () => {
         clearTimeout(timeoutId);
-        frame && clearTimeout(frame);
+        if (frame !== null) clearTimeout(frame);
         action?.();
     };
 
