@@ -9358,7 +9358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.0.0, prettier@npm:^3.0.0":
+"prettier@npm:3.0.0":
   version: 3.0.0
   resolution: "prettier@npm:3.0.0"
   bin:
@@ -9367,7 +9367,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.9.4":
+"prettier@npm:3.9.4, prettier@npm:^3.0.0":
   version: 3.9.4
   resolution: "prettier@npm:3.9.4"
   bin:
