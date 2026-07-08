@@ -27,11 +27,7 @@ export type NestedTableExtraProps = {
 
 /** Describes which style of table cell should be used. */
 export type TableCellVariant =
-    | 'default'
-    | 'no-pad'
-    | 'borderless'
-    | 'full-width'
-    | 'exclude';
+    'default' | 'no-pad' | 'borderless' | 'full-width' | 'exclude';
 
 export type TableCellAlign = 'start' | 'end' | 'center';
 

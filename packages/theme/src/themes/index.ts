@@ -6,10 +6,7 @@ import { THEME } from '../utils/constants';
 import { logger } from '../utils/logger';
 
 export type BaseThemeKey =
-    | 'light'
-    | 'dark'
-    | 'high_contrast_light'
-    | 'high_contrast_dark';
+    'light' | 'dark' | 'high_contrast_light' | 'high_contrast_dark';
 
 export const themes: Record<string, ThemeDefinition> = {
     light: {

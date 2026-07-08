@@ -606,7 +606,7 @@ export const createValidatedForm = <T extends object, Root = any>(
                     optional:
                         typeof options.optional === 'boolean'
                             ? () => options.optional as boolean
-                            : options.optional ?? field.optional,
+                            : (options.optional ?? field.optional),
                     validations: [
                         ...field.validations,
                         ...(options.validations ?? []),

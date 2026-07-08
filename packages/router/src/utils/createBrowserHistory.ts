@@ -116,7 +116,7 @@ export const createBrowserHistory = (
 
         // Set scroll position based on its previous storage value
         history.location.scrollPosition = updateScroll
-            ? scrollHistory.get(history.location.key) ?? [0, 0]
+            ? (scrollHistory.get(history.location.key) ?? [0, 0])
             : undefined;
 
         history.length = globalHistory.length;

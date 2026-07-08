@@ -18,8 +18,8 @@ export const cellClasses = (
     const extraClasses = !classes
         ? {}
         : typeof classes === 'string'
-        ? { [classes]: true }
-        : classes;
+          ? { [classes]: true }
+          : classes;
 
     return {
         focusCell,
@@ -35,7 +35,7 @@ export const variantClasses = ({
     variant,
     align = 'start',
 }: TableCell<unknown>) => {
-    const variants = typeof variant === 'string' ? [variant] : variant ?? [];
+    const variants = typeof variant === 'string' ? [variant] : (variant ?? []);
     return {
         no_pad: variants.includes('no-pad'),
         borderless: variants.includes('borderless'),

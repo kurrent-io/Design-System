@@ -38,9 +38,9 @@ const isPanelModeElement = (node: Element): node is PanelElement =>
 
 const findParent = (node: Element): Element =>
     node.assignedSlot
-        ? node.assignedSlot.parentElement ??
+        ? (node.assignedSlot.parentElement ??
           node.assignedSlot.parentNode?.parentElement ??
-          (node.assignedSlot.getRootNode() as ShadowRoot).host
-        : node.parentElement ??
+          (node.assignedSlot.getRootNode() as ShadowRoot).host)
+        : (node.parentElement ??
           node.parentNode?.parentElement ??
-          (node.getRootNode() as ShadowRoot).host;
+          (node.getRootNode() as ShadowRoot).host);

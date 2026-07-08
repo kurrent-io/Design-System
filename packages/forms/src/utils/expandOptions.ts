@@ -38,7 +38,7 @@ export const expandOptions = <T extends object>(
                 optional:
                     typeof value.optional === 'boolean'
                         ? () => value.optional
-                        : value.optional ?? defaults.optional,
+                        : (value.optional ?? defaults.optional),
             };
         } else {
             expandedOptions[key] = {

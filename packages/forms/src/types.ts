@@ -21,8 +21,7 @@ export type Templated = boolean | 'no-edit';
 export type Severity = 'error' | 'warning' | 'info';
 
 export type ValidationMessage =
-    | string
-    | ((h: typeof jsxFactory) => VNode | VNode[] | null | string);
+    string | ((h: typeof jsxFactory) => VNode | VNode[] | null | string);
 
 export interface ValidationMessages {
     error: ValidationMessage[];
@@ -126,13 +125,11 @@ interface WDConnection<K extends string, V extends object> {
 }
 
 export type Connection<K extends string, V> = V extends
-    | Array<any>
-    | Map<any, any>
-    | Set<any>
+    Array<any> | Map<any, any> | Set<any>
     ? BasicConnection<K, V>
     : V extends object
-    ? WDConnection<K, V>
-    : BasicConnection<K, V>;
+      ? WDConnection<K, V>
+      : BasicConnection<K, V>;
 
 export interface Connector<T> {
     <K extends string & keyof T>(key: K): Connection<K, T[K]>;
@@ -212,8 +209,8 @@ export type ValidatedFormOptions<T extends object, Root = any> = {
     [key in keyof T]: T[key] extends Array<any> | Map<any, any> | Set<any>
         ? FieldOptions<T[key], T> | T[key]
         : T[key] extends object
-        ? FieldOptions<T[key], T> | T[key] | ValidatedForm<T[key], Root>
-        : FieldOptions<T[key], T> | T[key];
+          ? FieldOptions<T[key], T> | T[key] | ValidatedForm<T[key], Root>
+          : FieldOptions<T[key], T> | T[key];
 };
 
 /** Additional global options for the entire validated form. */
@@ -250,8 +247,9 @@ export type InternalValidatedFormOptions<T> = {
         : InternalFieldOptions<T[key], T>;
 };
 
-export interface InternalFieldOptions<ItemType, T>
-    extends Required<Omit<FieldOptions<ItemType, T>, 'optional'>> {
+export interface InternalFieldOptions<ItemType, T> extends Required<
+    Omit<FieldOptions<ItemType, T>, 'optional'>
+> {
     optional: (data: T) => boolean;
 }
 

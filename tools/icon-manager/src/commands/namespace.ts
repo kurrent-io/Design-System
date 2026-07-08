@@ -32,9 +32,8 @@ export const setNamespace = async ({ dir, namespace }: SetNamespaceOptions) => {
 const removeNamespace = async (dir: string) => {
     try {
         const directory = isAbsolute(dir) ? dir : resolve(cwd(), dir);
-        const { namespace, ...indexFile } = await readIndexFileDetails(
-            directory,
-        );
+        const { namespace, ...indexFile } =
+            await readIndexFileDetails(directory);
 
         if (namespace == null) {
             return failure(`No namespace set in ${dir}`);

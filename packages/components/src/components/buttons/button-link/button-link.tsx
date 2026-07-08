@@ -53,7 +53,9 @@ export class ButtonLink {
                     title={this.anchorTitle}
                     tabIndex={this.anchorTabIndex}
                     id={this.anchorId}
-                    target={this.target ?? this.external ? '_blank' : undefined}
+                    target={
+                        (this.target ?? this.external) ? '_blank' : undefined
+                    }
                     rel={this.external ? 'noopener' : undefined}
                     disabled={this.disabled}
                     part={'link'}

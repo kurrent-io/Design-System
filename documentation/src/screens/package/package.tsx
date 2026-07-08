@@ -225,7 +225,7 @@ export class DocsPackage {
     private fileName = (reflection: SomeReflection): string =>
         `${
             'sources' in reflection
-                ? reflection.sources?.[0].fileName ?? ''
+                ? (reflection.sources?.[0].fileName ?? '')
                 : ''
         }${reflection.name}`;
 

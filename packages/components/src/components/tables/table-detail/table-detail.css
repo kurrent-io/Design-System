@@ -24,7 +24,7 @@ c2-table-detail {
         minmax(
             max(
                 /* The maximum width a column can ever be is 100% / the maximum number of columns, with width of the gaps subtracted. */
-                    calc(
+                calc(
                         (100% / var(--max-columns)) -
                             (var(--column-gap) * (var(--max-columns) - 1))
                     ),
